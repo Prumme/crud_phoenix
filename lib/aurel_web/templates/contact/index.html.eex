@@ -1,0 +1,34 @@
+<h1>Listing Contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Uuid</th>
+      <th>Firstname</th>
+      <th>Email</th>
+      <th>Pro</th>
+      <th>Pers</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for contact <- @contacts do %>
+    <tr>
+      <td><%= contact.uuid %></td>
+      <td><%= contact.firstname %></td>
+      <td><%= contact.email %></td>
+      <td><%= contact.pro %></td>
+      <td><%= contact.pers %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.contact_path(@conn, :show, contact) %></span>
+        <span><%= link "Edit", to: Routes.contact_path(@conn, :edit, contact) %></span>
+        <span><%= link "Delete", to: Routes.contact_path(@conn, :delete, contact), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Contact", to: Routes.contact_path(@conn, :new) %></span>

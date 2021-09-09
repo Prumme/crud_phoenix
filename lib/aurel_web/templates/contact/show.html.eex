@@ -1,0 +1,33 @@
+<h1>Show Contact</h1>
+
+<ul>
+
+  <li>
+    <strong>Uuid:</strong>
+    <%= @contact.uuid %>
+  </li>
+
+  <li>
+    <strong>Firstname:</strong>
+    <%= @contact.firstname %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @contact.email %>
+  </li>
+
+  <li>
+    <strong>Pro:</strong>
+    <%= @contact.pro %>
+  </li>
+
+  <li>
+    <strong>Pers:</strong>
+    <%= @contact.pers %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.contact_path(@conn, :edit, @contact) %></span>
+<span><%= link "Back", to: Routes.contact_path(@conn, :index) %></span>
